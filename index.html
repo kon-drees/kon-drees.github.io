@@ -7,17 +7,22 @@
     <link rel="stylesheet" href="styles.css">
     <script>
         function displayEmail() {
-            var email = ['c', 'o', 'n', 't', 'a', 'c', 't', '@', 'k', 'd', 'r', 'e', 'e', 's', '.', 'd', 'e', 'v'];
-            var emailString = email.join('');
-            var emailElement = document.getElementById('email');
+            const email = ['c', 'o', 'n', 't', 'a', 'c', 't', '@', 'k', 'd', 'r', 'e', 'e', 's', '.', 'd', 'e', 'v'];
+            const emailString = email.join('');
+            const emailElement = document.getElementById('email');
             emailElement.innerHTML = '<a style="color: #58a6ff;" href="mailto:' + emailString + '">' + emailString + '</a>';
         }
     </script>
 </head>
 <body>
 <header>
-    <h1>Konrad Drees</h1>
-    <p>Software Developer | Machine Learning Enthusiast</p>
+    <div class="header-content">
+        <div class="profile-picture"></div>
+        <div class="info">
+            <h1>Konrad Drees</h1>
+            <p>Software Developer | Machine Learning Enthusiast</p>
+        </div>
+    </div>
 </header>
 
 <section class="container">
