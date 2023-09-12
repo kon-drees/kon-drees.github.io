@@ -15,6 +15,27 @@ header {
     color: #c9d1d9;
 }
 
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.info {
+    text-align: left;
+}
+
+.profile-picture {
+    background-image: url('files/me.jpeg');
+    background-size: cover;
+    background-position: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
 .container {
     max-width: 800px;
     margin: 0 auto;
