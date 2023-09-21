@@ -27,7 +27,7 @@ header {
 }
 
 .profile-picture {
-    background-image: url('https://github.com/kon-drees/kon-drees.github.io/blob/main/files/me.jpeg');
+    background-image: url('https://raw.githubusercontent.com/kon-drees/kon-drees.github.io/blob/main/files/me.jpeg');
     background-size: cover;
     background-position: center;
     width: 100px;
