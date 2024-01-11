@@ -107,9 +107,57 @@ ul {
 }
 
 
+
+
+
+
+#game-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    margin: 10px;
+    padding: 5px 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#surprise p {
+    font-size: 24px;
+    color: red;
+    animation: heartbeat 1.5s ease-in-out infinite alternate, colorChange 3s infinite alternate;
+}
+
+
+.celebration {
+    animation: backgroundColorChange 5s infinite alternate;
+}
+
+@keyframes backgroundColorChange {
+    0% { background-color: #ffccff; }
+    50% { background-color: #ccffcc; }
+    100% { background-color: #ccccff; }
+}
+
+
+@keyframes heartbeat {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
+
+@keyframes colorChange {
+    0% { color: red; }
+    50% { color: blue; }
+    100% { color: green; }
+}
+
+
 @media (max-width: 768px) {
     .profile-picture {
         width: 80px;
         height: 80px;
     }
+
+
 }
