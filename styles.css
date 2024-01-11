@@ -134,6 +134,16 @@ button {
     animation: backgroundColorChange 5s infinite alternate;
 }
 
+.fade-in {
+    animation: fadeIn 2s;
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 @keyframes backgroundColorChange {
     0% { background-color: #ffccff; }
     50% { background-color: #ccffcc; }
