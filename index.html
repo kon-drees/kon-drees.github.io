@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Konrad Drees</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script>
         function displayEmail() {
             const email = ['c', 'o', 'n', 't', 'a', 'c', 't', '@', 'k', 'd', 'r', 'e', 'e', 's', '.', 'd', 'e', 'v'];
@@ -12,9 +13,6 @@
             const emailElement = document.getElementById('email');
             emailElement.innerHTML = '<a style="color: #58a6ff;" href="mailto:' + emailString + '">' + emailString + '</a>';
         }
-
-
-
     </script>
 </head>
 <body>
@@ -92,8 +90,9 @@
 
     <div class="section">
         <h2>Contact</h2>
-        <p>Email: <span id="email" onclick="displayEmail()">Click to reveal</span></p>
-        <p>GitHub: <a href="https://github.com/kon-drees" style="color: #58a6ff;">github.com/kon-drees</a></p>
+        <p><i class="fas fa-envelope"></i> Email: <span id="email" onclick="displayEmail()">Click to reveal</span></p>
+        <p><i class="fab fa-github"></i> GitHub: <a href="https://www.github.com/kon-drees" style="color: #58a6ff;">github.com/kon-drees</a></p>
+        <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/kon-drees" style="color: #0072b1;">linkedin.com/in/kon-drees</a></p>
     </div>
 
 
