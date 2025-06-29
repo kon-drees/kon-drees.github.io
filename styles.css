@@ -24,6 +24,10 @@ header {
 
 .info {
     text-align: left;
+    text-wrap: balance;
+    /* text is styled in block not left */
+
+
 }
 
 .profile-picture {
@@ -72,12 +76,36 @@ h3 {
 p {
     font-size: 16px;
     line-height: 1.5;
+    color: #c9d1d9;
 }
 
 ul {
     list-style-type: disc;
     padding-left: 20px;
 }
+
+.summary {
+    text-align: justify
+
+}
+
+
+.experience,
+.education h4 {
+    font-size: 16px;
+    color: #8b949e;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    font-weight: normal;
+}
+
+.experience,
+.education h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+
 
 .experience,
 .education {
