@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Konrad Drees – Backend Engineer specializing in Process Mining, BPMN automation, and Camunda.">
+    <meta name="description" content="Konrad Drees – Backend Engineer specializing in Process Mining, conformance checking, and BPMN automation with Camunda.">
     <meta name="color-scheme" content="light dark">
     <title>Konrad Drees</title>
 
@@ -11,7 +11,7 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231a1a1a'/><text x='50' y='70' font-size='60' font-family='Georgia,serif' fill='%23fafaf8' text-anchor='middle'>K</text></svg>">
     <meta property="og:type" content="profile">
     <meta property="og:title" content="Konrad Drees – Backend Engineer">
-    <meta property="og:description" content="Backend Engineer specializing in Process Mining, BPMN automation, and Camunda.">
+    <meta property="og:description" content="Backend Engineer specializing in Process Mining, conformance checking, and BPMN automation with Camunda.">
     <meta property="og:url" content="https://kdrees.dev/">
     <meta property="og:image" content="https://raw.githubusercontent.com/kon-drees/kon-drees.github.io/main/files/me.jpeg">
     <meta name="twitter:card" content="summary">
@@ -22,10 +22,10 @@
     <style>
         :root {
             --bg:      #fafaf8;
-            --ink:     #1a1a1a;  
-            --ink-2:   #444444;  
-            --ink-3:   #5c5c5c;  
-            --ink-4:   #6e6e6e;  
+            --ink:     #1a1a1a;
+            --ink-2:   #444444;
+            --ink-3:   #5c5c5c;
+            --ink-4:   #6e6e6e;
             --rule:    #e6e6e2;
             --rule-2:  #d4d4d0;
             --accent:  #1a1a1a;
@@ -407,7 +407,7 @@
 
     <section>
         <h2>About</h2>
-        <p class="summary">Backend engineer specializing in process mining and BPMN-driven workflow automation. Hands-on experience with Camunda, Apache Camel, and Spring in the insurance domain. Currently pursuing an M.Sc. in Computer Science at FernUniversität Hagen with a thesis on process synthesis at the Process Mining research group.</p>
+        <p class="summary">Backend engineer specializing in process mining and BPMN-driven workflow automation. Hands-on experience with Camunda, Apache Camel, and Spring in the insurance domain. Currently pursuing an M.Sc. in Computer Science at FernUniversität Hagen, writing a thesis on conformance checking: a unified fitness measure that generalizes token replay from traces and partial orders to labelled Petri nets.</p>
     </section>
 
     <section>
@@ -459,7 +459,7 @@
         <div class="edu">
             <div class="edu__degree">M.Sc. Computer Science <span class="edu__school">· FernUniversität in Hagen</span></div>
             <div class="edu__date">10.2024 – Present</div>
-            <div class="edu__thesis">Thesis: Process Synthesis (Process Mining research group).</div>
+            <div class="edu__thesis">Thesis: Token Trail Replay — a unified fitness measure for traces, partial orders, and labelled workflow nets. Process Mining research group, supervised by Dr. Robin Bergenthum.</div>
         </div>
         <div class="edu">
             <div class="edu__degree">M.Sc. Computer Science <span class="edu__school">· Universität Passau</span></div>
@@ -485,7 +485,7 @@
 
     <section>
         <h2>Skills</h2>
-        <div class="skill-row"><span>Process &amp; BPM</span><span>Camunda BPM, BPMN, Apache Camel, Process Mining (PM4Py)</span></div>
+        <div class="skill-row"><span>Process &amp; BPM</span><span>Camunda BPM, BPMN, Apache Camel, Process Mining, Conformance Checking, Petri Nets</span></div>
         <div class="skill-row"><span>Languages</span><span>Java, TypeScript, Python, SQL</span></div>
         <div class="skill-row"><span>Backend &amp; APIs</span><span>Spring, Java EE, GraphQL, REST, OpenAPI, NestJS</span></div>
         <div class="skill-row"><span>Frontend</span><span>Angular, TypeScript</span></div>
@@ -499,10 +499,10 @@
 
         <div class="project">
             <div>
-                <div class="project__name">Process Synthesis<span class="project__status">In progress</span></div>
-                <div class="project__desc">Synthesis of process models from event data. M.Sc. thesis at the Process Mining research group, FernUniversität in Hagen, supervised by Dr. Robin Bergenthum.</div>
+                <div class="project__name">Token Trail Replay<span class="project__status">In progress</span></div>
+                <div class="project__desc">A unified conformance-checking measure for Petri nets, defined via token trails. Provably specializes to van der Aalst's token replay for traces and to Folz-Weinstein's variant for partial orders, while extending to labelled nets. Formulated as a constrained optimization problem; specialization results verified numerically on randomly generated instances. M.Sc. thesis.</div>
             </div>
-            <div class="project__tech">Java · BPMN</div>
+            <div class="project__tech">Python · LP/ILP · Petri nets</div>
         </div>
 
         <div class="project">
