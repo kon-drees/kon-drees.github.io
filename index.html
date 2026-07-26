@@ -4,18 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Konrad Drees – Backend Engineer specializing in Process Mining, BPMN automation, and Camunda.">
+    <meta name="color-scheme" content="light dark">
     <title>Konrad Drees</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="canonical" href="https://kdrees.dev/">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231a1a1a'/><text x='50' y='70' font-size='60' font-family='Georgia,serif' fill='%23fafaf8' text-anchor='middle'>K</text></svg>">
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Konrad Drees – Backend Engineer">
+    <meta property="og:description" content="Backend Engineer specializing in Process Mining, BPMN automation, and Camunda.">
+    <meta property="og:url" content="https://kdrees.dev/">
+    <meta property="og:image" content="https://raw.githubusercontent.com/kon-drees/kon-drees.github.io/main/files/me.jpeg">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg:      #fafaf8;
+            --ink:     #1a1a1a;  
+            --ink-2:   #444444;  
+            --ink-3:   #5c5c5c;  
+            --ink-4:   #6e6e6e;  
+            --rule:    #e6e6e2;
+            --rule-2:  #d4d4d0;
+            --accent:  #1a1a1a;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg:      #16161a;
+                --ink:     #ececea;
+                --ink-2:   #c6c6c2;
+                --ink-3:   #aaaaa6;
+                --ink-4:   #93938f;
+                --rule:    #2a2a2f;
+                --rule-2:  #3c3c42;
+                --accent:  #ececea;
+            }
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'DM Sans', sans-serif;
-            background: #fafaf8;
-            color: #1a1a1a;
+            background: var(--bg);
+            color: var(--ink);
             line-height: 1.65;
             -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection { background: var(--ink); color: var(--bg); }
+
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+            border-radius: 2px;
         }
 
         .page {
@@ -23,8 +67,6 @@
             margin: 0 auto;
             padding: 80px 24px 120px;
         }
-
-        /* Hero */
         .hero {
             display: flex;
             gap: 24px;
@@ -38,6 +80,7 @@
             border-radius: 50%;
             object-fit: cover;
             flex-shrink: 0;
+            background: var(--rule);
         }
 
         .hero h1 {
@@ -49,50 +92,46 @@
         }
 
         .hero p {
-            color: #666;
+            color: var(--ink-3);
             font-size: 14px;
             margin-top: 6px;
         }
 
         .links {
             display: flex;
-            gap: 16px;
-            margin-top: 12px;
+            gap: 14px;
+            margin-top: 14px;
         }
 
         .links a {
-            color: #888;
-            font-size: 15px;
+            display: inline-flex;
+            color: var(--ink-4);
             text-decoration: none;
             transition: color 0.2s;
         }
-        .links a:hover { color: #1a1a1a; }
+        .links a:hover { color: var(--ink); }
+        .links svg { display: block; }
 
-        /* Sections */
         section { margin-bottom: 48px; }
-
         section h2 {
             font-family: 'IBM Plex Mono', monospace;
             font-size: 11px;
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            color: #999;
+            color: var(--ink-4);
             margin-bottom: 20px;
         }
-
         .summary {
             font-size: 15px;
-            color: #444;
+            color: var(--ink-2);
             line-height: 1.75;
         }
-
-        /* Experience */
         .entry {
             padding: 20px 0;
-            border-top: 1px solid #eee;
+            border-top: 1px solid var(--rule);
         }
-        .entry:last-child { border-bottom: 1px solid #eee; }
+        .entry:last-child { border-bottom: 1px solid var(--rule); }
 
         .entry__head {
             display: flex;
@@ -102,22 +141,19 @@
             flex-wrap: wrap;
         }
 
-        .entry__title {
-            font-size: 15px;
-            font-weight: 500;
-        }
-        .entry__company { color: #666; font-weight: 400; }
+        .entry__title { font-size: 15px; font-weight: 500; }
+        .entry__company { color: var(--ink-3); font-weight: 400; }
 
         .entry__date {
             font-family: 'IBM Plex Mono', monospace;
             font-size: 12px;
-            color: #999;
+            color: var(--ink-4);
             white-space: nowrap;
         }
 
         .entry__desc {
             font-size: 14px;
-            color: #666;
+            color: var(--ink-3);
             margin-top: 8px;
             line-height: 1.7;
         }
@@ -125,95 +161,103 @@
         .entry__sub {
             margin-top: 14px;
             padding-left: 14px;
-            border-left: 2px solid #eee;
+            border-left: 2px solid var(--rule);
         }
         .entry__sub + .entry__sub { margin-top: 12px; }
 
         .entry__sub-date {
             font-family: 'IBM Plex Mono', monospace;
             font-size: 11px;
-            color: #aaa;
+            color: var(--ink-4);
         }
         .entry__sub-desc {
             font-size: 14px;
-            color: #666;
+            color: var(--ink-3);
             margin-top: 2px;
             line-height: 1.7;
         }
 
-        /* Education */
+        /* ---------- Education ---------- */
         .edu {
             padding: 16px 0;
-            border-top: 1px solid #eee;
+            border-top: 1px solid var(--rule);
         }
-        .edu:last-child { border-bottom: 1px solid #eee; }
+        .edu:last-child { border-bottom: 1px solid var(--rule); }
 
-        .edu__degree {
-            font-size: 15px;
-            font-weight: 500;
-        }
-        .edu__school { color: #666; font-weight: 400; }
+        .edu__degree { font-size: 15px; font-weight: 500; }
+        .edu__school { color: var(--ink-3); font-weight: 400; }
         .edu__date {
             font-family: 'IBM Plex Mono', monospace;
             font-size: 12px;
-            color: #999;
+            color: var(--ink-4);
             margin-top: 2px;
+        }
+        .edu__note {
+            font-size: 13px;
+            color: var(--ink-4);
+            margin-top: 6px;
         }
         .edu__thesis {
             font-size: 13px;
-            color: #888;
+            color: var(--ink-4);
             margin-top: 6px;
             font-style: italic;
         }
-
-        /* Skills */
         .skill-row {
             display: flex;
             justify-content: space-between;
             padding: 10px 0;
-            border-top: 1px solid #eee;
+            border-top: 1px solid var(--rule);
             font-size: 14px;
             gap: 16px;
         }
-        .skill-row:last-child { border-bottom: 1px solid #eee; }
+        .skill-row:last-child { border-bottom: 1px solid var(--rule); }
         .skill-row span:first-child {
             font-weight: 500;
             white-space: nowrap;
             flex-shrink: 0;
         }
         .skill-row span:last-child {
-            color: #888;
+            color: var(--ink-4);
             font-family: 'IBM Plex Mono', monospace;
             font-size: 12px;
             text-align: right;
         }
-
-        /* Projects */
         .project {
             padding: 16px 0;
-            border-top: 1px solid #eee;
+            border-top: 1px solid var(--rule);
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             gap: 16px;
         }
-        .project:last-child { border-bottom: 1px solid #eee; }
-
-        .project__name {
-            font-size: 15px;
-            font-weight: 500;
-        }
+        .project:last-child { border-bottom: 1px solid var(--rule); }
+        .project__name { font-size: 15px; font-weight: 500; }
         .project__name a {
-            color: #1a1a1a;
+            color: var(--ink);
             text-decoration: none;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid var(--rule-2);
             transition: border-color 0.2s;
         }
-        .project__name a:hover { border-color: #1a1a1a; }
+        .project__name a:hover { border-color: var(--ink); }
+        .project__status {
+            display: inline-block;
+            margin-left: 8px;
+            padding: 0.1em 0.55em;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 10px;
+            font-weight: 400;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--ink-4);
+            border: 1px solid var(--rule-2);
+            border-radius: 999px;
+            vertical-align: 2px;
+        }
 
         .project__desc {
             font-size: 13px;
-            color: #666;
+            color: var(--ink-3);
             margin-top: 4px;
             line-height: 1.6;
         }
@@ -221,49 +265,39 @@
         .project__tech {
             font-family: 'IBM Plex Mono', monospace;
             font-size: 11px;
-            color: #aaa;
+            color: var(--ink-4);
             white-space: nowrap;
             flex-shrink: 0;
-            margin-top: 3px;
+            margin-top: 4px;
         }
-
-        /* Languages */
         .lang-row {
             font-size: 14px;
-            color: #444;
+            color: var(--ink-2);
             padding: 6px 0;
         }
         .lang-row span {
-            color: #999;
+            color: var(--ink-4);
             font-family: 'IBM Plex Mono', monospace;
             font-size: 12px;
             margin-left: 6px;
         }
-
-        /* Interests & misc */
-        .interests-list {
-            font-size: 14px;
-            color: #555;
-        }
-
+        .interests-list { font-size: 14px; color: var(--ink-2); }
         .membership {
             font-size: 13px;
-            color: #888;
+            color: var(--ink-4);
             margin-top: 8px;
         }
-
-        /* Certs */
         .cert {
             display: flex;
             align-items: center;
             gap: 14px;
             padding: 14px 0;
-            border-top: 1px solid #eee;
+            border-top: 1px solid var(--rule);
             text-decoration: none;
             color: inherit;
             transition: opacity 0.2s;
         }
-        .cert:last-child { border-bottom: 1px solid #eee; }
+        .cert:last-child { border-bottom: 1px solid var(--rule); }
         .cert:hover { opacity: 0.7; }
 
         .cert img {
@@ -271,37 +305,34 @@
             height: 40px;
             border-radius: 8px;
             object-fit: cover;
+            background: var(--rule);
         }
-        .cert__name {
-            font-size: 14px;
-            font-weight: 500;
-        }
-        .cert__issuer {
-            font-size: 12px;
-            color: #999;
-        }
-
-        /* Contact */
-        .contact-row {
-            font-size: 14px;
-            padding: 8px 0;
-        }
+        .cert__name { font-size: 14px; font-weight: 500; }
+        .cert__issuer { font-size: 12px; color: var(--ink-4); }
+        .contact-row { font-size: 14px; padding: 8px 0; }
         .contact-row a {
-            color: #1a1a1a;
+            color: var(--ink);
             text-decoration: none;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid var(--rule-2);
             transition: border-color 0.2s;
         }
-        .contact-row a:hover { border-color: #1a1a1a; }
-        .contact-row > span:first-child { color: #999; margin-right: 8px; font-size: 13px; }
-
-        #email-trigger {
-            color: #999;
-            cursor: pointer;
-            border-bottom: 1px dashed #ccc;
+        .contact-row a:hover { border-color: var(--ink); }
+        .contact-row > span:first-child {
+            color: var(--ink-4);
+            margin-right: 8px;
+            font-size: 13px;
         }
 
-        /* Responsive */
+        #email-trigger {
+            color: var(--ink-4);
+            cursor: pointer;
+            border-bottom: 1px dashed var(--rule-2);
+            background: none;
+            border-top: 0; border-left: 0; border-right: 0;
+            font: inherit;
+            font-size: 14px;
+            padding: 0;
+        }
         @media (max-width: 520px) {
             .page { padding: 48px 20px 80px; }
             .hero { gap: 16px; }
@@ -311,13 +342,41 @@
             .skill-row { flex-direction: column; gap: 2px; }
             .skill-row span:last-child { text-align: left; }
             .project { flex-direction: column; gap: 4px; }
+            .project__tech { margin-top: 8px; white-space: normal; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            * { transition: none !important; animation: none !important; }
+        }
+        @media print {
+            :root {
+                --bg: #fff; --ink: #000; --ink-2: #222;
+                --ink-3: #333; --ink-4: #555;
+                --rule: #ccc; --rule-2: #999;
+            }
+            .page { max-width: none; padding: 0; }
+            .links { display: none; }
+            a { border-bottom: none !important; }
+            section { margin-bottom: 22px; }
+            .entry, .edu, .project, .cert, section { page-break-inside: avoid; }
         }
     </style>
     <script>
-        function displayEmail() {
-            const e = ['c','o','n','t','a','c','t','@','k','d','r','e','e','s','.','d','e','v'].join('');
-            const el = document.getElementById('email-trigger');
-            el.outerHTML = '<a href="mailto:' + e + '">' + e + '</a>';
+        function getEmail() {
+            return ['c','o','n','t','a','c','t','@','k','d','r','e','e','s','.','d','e','v'].join('');
+        }
+
+        /* Reveals the address in the Contact section. Safe to call repeatedly. */
+        function revealEmail() {
+            var el = document.getElementById('email-trigger');
+            if (!el) return;
+            var mail = getEmail();
+            el.outerHTML = '<a href="mailto:' + mail + '">' + mail + '</a>';
+        }
+
+        /* Envelope icon in the header: open the mail client directly. */
+        function mailTo() {
+            revealEmail();
+            window.location.href = 'mailto:' + getEmail();
         }
     </script>
 </head>
@@ -326,14 +385,22 @@
 <div class="page">
 
     <header class="hero">
-        <img class="avatar" src="https://github.com/kon-drees/kon-drees.github.io/blob/main/files/me.jpeg?raw=true" alt="Konrad Drees">
+        <img class="avatar" width="72" height="72"
+             src="https://raw.githubusercontent.com/kon-drees/kon-drees.github.io/main/files/me.jpeg"
+             alt="Konrad Drees">
         <div>
             <h1>Konrad Drees</h1>
             <p>Backend Engineer · Process Mining + BPMN Automation</p>
             <div class="links">
-                <a href="https://www.github.com/kon-drees" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/kon-drees" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="#" onclick="displayEmail(); return false;"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/kon-drees" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/kon-drees" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+                </a>
+                <a href="#" onclick="mailTo(); return false;" aria-label="Email">
+                    <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7 12 13.5 2 7"/></svg>
+                </a>
             </div>
         </div>
     </header>
@@ -352,13 +419,22 @@
                 <div class="entry__date">11.2024 – Present</div>
             </div>
             <div class="entry__sub">
-                <div class="entry__sub-date">since 07.2025</div>
+                <div class="entry__sub-date">07.2025 – Present</div>
                 <div class="entry__sub-desc">Designing and implementing a dialog-driven process orchestration for insurance workflows using Spring, Apache Camel, and Camunda BPM. Technical ownership of process logic.</div>
             </div>
             <div class="entry__sub">
                 <div class="entry__sub-date">11.2024 – 06.2025</div>
                 <div class="entry__sub-desc">Full-stack development of a web-based property insurance platform (VKB) with Angular &amp; TypeScript in the frontend and Java EE in the backend.</div>
             </div>
+        </div>
+
+        <!-- TODO: Zeitraum an die tatsächlichen Daten anpassen -->
+        <div class="entry">
+            <div class="entry__head">
+                <div class="entry__title">IT Consultant <span class="entry__company">· ISR Information Products AG</span></div>
+                <div class="entry__date">05.2024 – 10.2024</div>
+            </div>
+            <div class="entry__desc">Modernization of an enterprise document management platform, migrating legacy content services to IBM FileNet P8. Backend development in Java with Apache Camel for system integration, alongside Angular in the frontend.</div>
         </div>
 
         <div class="entry">
@@ -382,9 +458,15 @@
         <h2>Education</h2>
         <div class="edu">
             <div class="edu__degree">M.Sc. Computer Science <span class="edu__school">· FernUniversität in Hagen</span></div>
-            <div class="edu__date">10.2024 – Present </div>
-            <div class="edu__thesis">Thesis: Process Synthesis ( Process Mining research group).</div>
+            <div class="edu__date">10.2024 – Present</div>
+            <div class="edu__thesis">Thesis: Process Synthesis (Process Mining research group).</div>
         </div>
+        <div class="edu">
+            <div class="edu__degree">M.Sc. Computer Science <span class="edu__school">· Universität Passau</span></div>
+            <div class="edu__date">10.2023 – 09.2024 · 2 semesters, discontinued</div>
+            <div class="edu__note">Continued part-time at FernUniversität in Hagen alongside full-time work.</div>
+        </div>
+
         <div class="edu">
             <div class="edu__degree">B.Sc. Computer Science <span class="edu__school">· FernUniversität in Hagen</span></div>
             <div class="edu__date">10.2020 – 09.2023</div>
@@ -414,23 +496,34 @@
 
     <section>
         <h2>Projects</h2>
+
         <div class="project">
             <div>
-                <div class="project__name"><a href="https://github.com/kon-drees/sls-ml" target="_blank">sls-ml</a></div>
+                <div class="project__name">Process Synthesis<span class="project__status">In progress</span></div>
+                <div class="project__desc">Synthesis of process models from event data. M.Sc. thesis at the Process Mining research group, FernUniversität in Hagen, supervised by Dr. Robin Bergenthum.</div>
+            </div>
+            <div class="project__tech">Java · BPMN</div>
+        </div>
+
+        <div class="project">
+            <div>
+                <div class="project__name"><a href="https://github.com/kon-drees/sls-ml" target="_blank" rel="noopener">sls-ml</a></div>
                 <div class="project__desc">Stochastic local search algorithm for abstract argumentation frameworks with ML-based heuristics. Bachelor thesis project.</div>
             </div>
             <div class="project__tech">Python</div>
         </div>
+
         <div class="project">
             <div>
-                <div class="project__name"><a href="https://github.com/kon-drees/Fake-News-Detector" target="_blank">Fake-News-Detector</a></div>
+                <div class="project__name"><a href="https://github.com/kon-drees/Fake-News-Detector" target="_blank" rel="noopener">Fake-News-Detector</a></div>
                 <div class="project__desc">News article classifier using a fine-tuned BERT model and an OpenAI agent, with optional word-level relevance highlighting.</div>
             </div>
             <div class="project__tech">Python</div>
         </div>
+
         <div class="project">
             <div>
-                <div class="project__name"><a href="https://github.com/kon-drees/Fachpraktikum_K01589" target="_blank">NLP Explanation Component</a></div>
+                <div class="project__name"><a href="https://github.com/kon-drees/Fachpraktikum_K01589" target="_blank" rel="noopener">NLP Explanation Component</a></div>
                 <div class="project__desc">Explanation component for the practical course "NLP, Information Extraction and Retrieval" at FernUniversität Hagen.</div>
             </div>
             <div class="project__tech">Java</div>
@@ -453,15 +546,19 @@
 
     <section>
         <h2>Certifications</h2>
-        <a class="cert" href="https://www.credly.com/badges/b247562f-34b8-4811-8022-90617fb31bfc/public_url" target="_blank">
-            <img src="https://github.com/kon-drees/kon-drees.github.io/blob/main/files/aws-certified-cloud-practitioner.png?raw=true" alt="AWS Certified Cloud Practitioner badge">
+        <a class="cert" href="https://www.credly.com/badges/b247562f-34b8-4811-8022-90617fb31bfc/public_url" target="_blank" rel="noopener">
+            <img loading="lazy" width="40" height="40"
+                 src="https://raw.githubusercontent.com/kon-drees/kon-drees.github.io/main/files/aws-certified-cloud-practitioner.png"
+                 alt="AWS Certified Cloud Practitioner badge">
             <div>
                 <div class="cert__name">AWS Certified Cloud Practitioner</div>
                 <div class="cert__issuer">Amazon Web Services</div>
             </div>
         </a>
-        <a class="cert" href="https://coursera.org/verify/HLUIQUPLRAU7" target="_blank">
-            <img src="https://github.com/kon-drees/kon-drees.github.io/blob/main/files/Coursera_itde.png?raw=true" alt="Coursera Introduction to Data Engineering certificate">
+        <a class="cert" href="https://coursera.org/verify/HLUIQUPLRAU7" target="_blank" rel="noopener">
+            <img loading="lazy" width="40" height="40"
+                 src="https://raw.githubusercontent.com/kon-drees/kon-drees.github.io/main/files/Coursera_itde.png"
+                 alt="Coursera Introduction to Data Engineering certificate">
             <div>
                 <div class="cert__name">Introduction to Data Engineering</div>
                 <div class="cert__issuer">DeepLearning.AI &amp; AWS · Coursera</div>
@@ -471,9 +568,9 @@
 
     <section>
         <h2>Contact</h2>
-        <div class="contact-row"><span>Email</span> <span id="email-trigger" onclick="displayEmail()">click to reveal</span></div>
-        <div class="contact-row"><span>GitHub</span> <a href="https://www.github.com/kon-drees" target="_blank">github.com/kon-drees</a></div>
-        <div class="contact-row"><span>LinkedIn</span> <a href="https://www.linkedin.com/in/kon-drees" target="_blank">linkedin.com/in/kon-drees</a></div>
+        <div class="contact-row"><span>Email</span> <button type="button" id="email-trigger" onclick="revealEmail()">click to reveal</button></div>
+        <div class="contact-row"><span>GitHub</span> <a href="https://github.com/kon-drees" target="_blank" rel="noopener">github.com/kon-drees</a></div>
+        <div class="contact-row"><span>LinkedIn</span> <a href="https://www.linkedin.com/in/kon-drees" target="_blank" rel="noopener">linkedin.com/in/kon-drees</a></div>
     </section>
 
 </div>
