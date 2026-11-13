@@ -3,51 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Konrad Drees – Backend Engineer specializing in Process Mining, conformance checking, and BPMN automation with Camunda.">
+    <meta name="description" content="Konrad Drees, backend engineer in Munich. Automates insurance workflows with Java and Apache Camel, writes his master's thesis on process mining.">
     <meta name="color-scheme" content="light dark">
     <title>Konrad Drees</title>
 
     <link rel="canonical" href="https://kdrees.dev/">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231a1a1a'/><text x='50' y='70' font-size='60' font-family='Georgia,serif' fill='%23fafaf8' text-anchor='middle'>K</text></svg>">
     <meta property="og:type" content="profile">
-    <meta property="og:title" content="Konrad Drees – Backend Engineer">
-    <meta property="og:description" content="Backend Engineer specializing in Process Mining, conformance checking, and BPMN automation with Camunda.">
+    <meta property="og:title" content="Konrad Drees, backend engineer">
+    <meta property="og:description" content="Automates insurance workflows with Java and Apache Camel, writes his master's thesis on process mining.">
     <meta property="og:url" content="https://kdrees.dev/">
     <meta property="og:image" content="https://raw.githubusercontent.com/kon-drees/kon-drees.github.io/main/files/me.jpeg">
     <meta name="twitter:card" content="summary">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg:      #fafaf8;
-            --ink:     #1a1a1a;
-            --ink-2:   #444444;
-            --ink-3:   #5c5c5c;
-            --ink-4:   #6e6e6e;
-            --rule:    #e6e6e2;
-            --rule-2:  #d4d4d0;
-            --accent:  #1a1a1a;
+            --bg:     #fafaf8;
+            --ink:    #1a1a1a;
+            --ink-2:  #3d3d3d;
+            --ink-3:  #5c5c5c;
+            --ink-4:  #6e6e6e;
+            --rule:   #e6e6e2;
+            --link:   #2f5d62;
         }
 
         @media (prefers-color-scheme: dark) {
             :root {
-                --bg:      #16161a;
-                --ink:     #ececea;
-                --ink-2:   #c6c6c2;
-                --ink-3:   #aaaaa6;
-                --ink-4:   #93938f;
-                --rule:    #2a2a2f;
-                --rule-2:  #3c3c42;
-                --accent:  #ececea;
+                --bg:     #17171a;
+                --ink:    #ececea;
+                --ink-2:  #d2d2ce;
+                --ink-3:  #aaaaa6;
+                --ink-4:  #93938f;
+                --rule:   #2c2c31;
+                --link:   #8fc1c6;
             }
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'DM Sans', sans-serif;
+            font-family: 'DM Sans', system-ui, sans-serif;
+            font-size: 15px;
             background: var(--bg);
             color: var(--ink);
             line-height: 1.65;
@@ -57,523 +56,341 @@
         ::selection { background: var(--ink); color: var(--bg); }
 
         :focus-visible {
-            outline: 2px solid var(--accent);
+            outline: 2px solid var(--link);
             outline-offset: 3px;
             border-radius: 2px;
         }
+
+        a { color: var(--link); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+        a:hover { text-decoration-thickness: 2px; }
 
         .page {
             max-width: 640px;
             margin: 0 auto;
             padding: 80px 24px 120px;
         }
+
+        /* ---------- Intro ---------- */
         .hero {
             display: flex;
-            gap: 24px;
-            align-items: flex-start;
-            margin-bottom: 56px;
+            gap: 20px;
+            align-items: center;
         }
-
         .avatar {
-            width: 72px;
-            height: 72px;
+            width: 64px;
+            height: 64px;
             border-radius: 50%;
             object-fit: cover;
             flex-shrink: 0;
             background: var(--rule);
         }
-
         .hero h1 {
-            font-family: 'Source Serif 4', serif;
+            font-family: 'Source Serif 4', Georgia, serif;
             font-size: 26px;
             font-weight: 600;
-            letter-spacing: -0.01em;
             line-height: 1.2;
         }
+        .hero .where { color: var(--ink-3); margin-top: 2px; }
 
-        .hero p {
-            color: var(--ink-3);
-            font-size: 14px;
-            margin-top: 6px;
-        }
-
-        .links {
-            display: flex;
-            gap: 14px;
-            margin-top: 14px;
-        }
-
-        .links a {
-            display: inline-flex;
-            color: var(--ink-4);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .links a:hover { color: var(--ink); }
-        .links svg { display: block; }
-
-        section { margin-bottom: 48px; }
-        section h2 {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 11px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--ink-4);
-            margin-bottom: 20px;
-        }
-        .summary {
-            font-size: 15px;
+        .intro {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 20px;
+            line-height: 1.55;
             color: var(--ink-2);
-            line-height: 1.75;
+            margin: 36px 0 20px;
         }
-        .entry {
-            padding: 20px 0;
-            border-top: 1px solid var(--rule);
-        }
-        .entry:last-child { border-bottom: 1px solid var(--rule); }
+        .intro p + p { margin-top: 14px; }
 
-        .entry__head {
+        .elsewhere { color: var(--ink-3); }
+        .elsewhere a, .elsewhere button { margin-right: 14px; }
+
+        /* ---------- Sections ---------- */
+        section { margin-top: 64px; }
+        section h2 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .item { padding: 16px 0; border-top: 1px solid var(--rule); }
+        .item:last-child { border-bottom: 1px solid var(--rule); }
+
+        .item__head {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .entry__title { font-size: 15px; font-weight: 500; }
-        .entry__company { color: var(--ink-3); font-weight: 400; }
-
-        .entry__date {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 12px;
-            color: var(--ink-4);
-            white-space: nowrap;
-        }
-
-        .entry__desc {
-            font-size: 14px;
-            color: var(--ink-3);
-            margin-top: 8px;
-            line-height: 1.7;
-        }
-
-        .entry__sub {
-            margin-top: 14px;
-            padding-left: 14px;
-            border-left: 2px solid var(--rule);
-        }
-        .entry__sub + .entry__sub { margin-top: 12px; }
-
-        .entry__sub-date {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 11px;
-            color: var(--ink-4);
-        }
-        .entry__sub-desc {
-            font-size: 14px;
-            color: var(--ink-3);
-            margin-top: 2px;
-            line-height: 1.7;
-        }
-
-        /* ---------- Education ---------- */
-        .edu {
-            padding: 16px 0;
-            border-top: 1px solid var(--rule);
-        }
-        .edu:last-child { border-bottom: 1px solid var(--rule); }
-
-        .edu__degree { font-size: 15px; font-weight: 500; }
-        .edu__school { color: var(--ink-3); font-weight: 400; }
-        .edu__date {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 12px;
-            color: var(--ink-4);
-            margin-top: 2px;
-        }
-        .edu__note {
-            font-size: 13px;
-            color: var(--ink-4);
-            margin-top: 6px;
-        }
-        .edu__thesis {
-            font-size: 13px;
-            color: var(--ink-4);
-            margin-top: 6px;
-            font-style: italic;
-        }
-        .skill-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-top: 1px solid var(--rule);
-            font-size: 14px;
             gap: 16px;
         }
-        .skill-row:last-child { border-bottom: 1px solid var(--rule); }
-        .skill-row span:first-child {
-            font-weight: 500;
+        .item__title { font-weight: 500; }
+        .item__org { color: var(--ink-3); font-weight: 400; }
+        .item__date {
+            color: var(--ink-4);
+            font-size: 13px;
             white-space: nowrap;
-            flex-shrink: 0;
+            font-variant-numeric: tabular-nums;
         }
-        .skill-row span:last-child {
-            color: var(--ink-4);
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 12px;
-            text-align: right;
-        }
-        .project {
-            padding: 16px 0;
-            border-top: 1px solid var(--rule);
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 16px;
-        }
-        .project:last-child { border-bottom: 1px solid var(--rule); }
-        .project__name { font-size: 15px; font-weight: 500; }
-        .project__name a {
-            color: var(--ink);
-            text-decoration: none;
-            border-bottom: 1px solid var(--rule-2);
-            transition: border-color 0.2s;
-        }
-        .project__name a:hover { border-color: var(--ink); }
-        .project__status {
-            display: inline-block;
-            margin-left: 8px;
-            padding: 0.1em 0.55em;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 10px;
-            font-weight: 400;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            color: var(--ink-4);
-            border: 1px solid var(--rule-2);
-            border-radius: 999px;
-            vertical-align: 2px;
-        }
+        .item__text { color: var(--ink-3); margin-top: 6px; }
+        .item__text + .item__text { margin-top: 8px; }
+        .item__stack { color: var(--ink-4); font-size: 13px; margin-top: 6px; }
 
-        .project__desc {
-            font-size: 13px;
-            color: var(--ink-3);
-            margin-top: 4px;
-            line-height: 1.6;
-        }
+        .phase { margin-top: 12px; padding-left: 14px; border-left: 2px solid var(--rule); }
+        .phase .item__date { display: block; }
+        .phase .item__text { margin-top: 2px; }
 
-        .project__tech {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 11px;
-            color: var(--ink-4);
-            white-space: nowrap;
-            flex-shrink: 0;
-            margin-top: 4px;
-        }
-        .lang-row {
-            font-size: 14px;
-            color: var(--ink-2);
-            padding: 6px 0;
-        }
-        .lang-row span {
-            color: var(--ink-4);
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 12px;
-            margin-left: 6px;
-        }
-        .interests-list { font-size: 14px; color: var(--ink-2); }
-        .membership {
-            font-size: 13px;
-            color: var(--ink-4);
-            margin-top: 8px;
-        }
-        .cert {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            padding: 14px 0;
-            border-top: 1px solid var(--rule);
-            text-decoration: none;
-            color: inherit;
-            transition: opacity 0.2s;
-        }
-        .cert:last-child { border-bottom: 1px solid var(--rule); }
-        .cert:hover { opacity: 0.7; }
+        .draft { font-style: italic; color: var(--ink-4); font-size: 13px; }
 
-        .cert img {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            object-fit: cover;
-            background: var(--rule);
-        }
-        .cert__name { font-size: 14px; font-weight: 500; }
-        .cert__issuer { font-size: 12px; color: var(--ink-4); }
-        .contact-row { font-size: 14px; padding: 8px 0; }
-        .contact-row a {
-            color: var(--ink);
-            text-decoration: none;
-            border-bottom: 1px solid var(--rule-2);
-            transition: border-color 0.2s;
-        }
-        .contact-row a:hover { border-color: var(--ink); }
-        .contact-row > span:first-child {
-            color: var(--ink-4);
-            margin-right: 8px;
-            font-size: 13px;
-        }
+        .skills { display: grid; grid-template-columns: 9.5rem 1fr; gap: 10px 20px; }
+        .skills dt { font-weight: 500; }
+        .skills dd { color: var(--ink-3); }
+
+        .plain { color: var(--ink-3); }
+        .plain + .plain { margin-top: 10px; }
 
         #email-trigger {
-            color: var(--ink-4);
+            color: var(--link);
             cursor: pointer;
-            border-bottom: 1px dashed var(--rule-2);
             background: none;
-            border-top: 0; border-left: 0; border-right: 0;
+            border: 0;
+            border-bottom: 1px dashed var(--link);
             font: inherit;
-            font-size: 14px;
             padding: 0;
         }
+
         @media (max-width: 520px) {
             .page { padding: 48px 20px 80px; }
-            .hero { gap: 16px; }
-            .avatar { width: 56px; height: 56px; }
-            .hero h1 { font-size: 22px; }
-            .entry__head { flex-direction: column; gap: 2px; }
-            .skill-row { flex-direction: column; gap: 2px; }
-            .skill-row span:last-child { text-align: left; }
-            .project { flex-direction: column; gap: 4px; }
-            .project__tech { margin-top: 8px; white-space: normal; }
+            .intro { font-size: 18px; }
+            .item__head { flex-direction: column; gap: 0; }
+            .skills { grid-template-columns: 1fr; gap: 2px; }
+            .skills dd { margin-bottom: 10px; }
         }
-        @media (prefers-reduced-motion: reduce) {
-            * { transition: none !important; animation: none !important; }
-        }
+
         @media print {
-            :root {
-                --bg: #fff; --ink: #000; --ink-2: #222;
-                --ink-3: #333; --ink-4: #555;
-                --rule: #ccc; --rule-2: #999;
-            }
+            :root { --bg: #fff; --ink: #000; --ink-2: #222; --ink-3: #333; --ink-4: #555; --rule: #ccc; --link: #000; }
             .page { max-width: none; padding: 0; }
-            .links { display: none; }
-            a { border-bottom: none !important; }
-            section { margin-bottom: 22px; }
-            .entry, .edu, .project, .cert, section { page-break-inside: avoid; }
+            .elsewhere { display: none; }
+            section { margin-top: 28px; }
+            .item { page-break-inside: avoid; }
         }
     </style>
     <script>
         function getEmail() {
             return ['c','o','n','t','a','c','t','@','k','d','r','e','e','s','.','d','e','v'].join('');
         }
-
-        /* Reveals the address in the Contact section. Safe to call repeatedly. */
-        function revealEmail() {
-            var el = document.getElementById('email-trigger');
-            if (!el) return;
+        function revealEmail(el) {
             var mail = getEmail();
-            el.outerHTML = '<a href="mailto:' + mail + '">' + mail + '</a>';
-        }
-
-        /* Envelope icon in the header: open the mail client directly. */
-        function mailTo() {
-            revealEmail();
-            window.location.href = 'mailto:' + getEmail();
+            var a = document.createElement('a');
+            a.href = 'mailto:' + mail;
+            a.textContent = mail;
+            el.replaceWith(a);
+            a.focus();
         }
     </script>
 </head>
 <body>
 
-<div class="page">
+<main class="page">
 
-    <header class="hero">
-        <img class="avatar" width="72" height="72"
-             src="https://raw.githubusercontent.com/kon-drees/kon-drees.github.io/main/files/me.jpeg"
-             alt="Konrad Drees">
-        <div>
-            <h1>Konrad Drees</h1>
-            <p>Backend Engineer · Process Mining + BPMN Automation</p>
-            <div class="links">
-                <a href="https://github.com/kon-drees" target="_blank" rel="noopener" aria-label="GitHub">
-                    <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg>
-                </a>
-                <a href="https://www.linkedin.com/in/kon-drees" target="_blank" rel="noopener" aria-label="LinkedIn">
-                    <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
-                </a>
-                <a href="#" onclick="mailTo(); return false;" aria-label="Email">
-                    <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7 12 13.5 2 7"/></svg>
-                </a>
+    <header>
+        <div class="hero">
+            <img class="avatar" width="64" height="64"
+                 src="https://raw.githubusercontent.com/kon-drees/kon-drees.github.io/main/files/me.jpeg"
+                 alt="Konrad Drees">
+            <div>
+                <h1>Konrad Drees</h1>
+                <p class="where">Backend engineer in Munich</p>
             </div>
         </div>
+
+        <div class="intro">
+            <p>I build backend systems that carry insurance cases through without someone having to click through every step.
+               Right now that means Java and Apache Camel at inverso; before that, three years of Camunda processes at msg.</p>
+            <p>On the side I’m finishing a part-time master’s in computer science. My thesis is on process mining:
+               replaying recorded process runs against a model and measuring how far they drift from it. As more of this
+               work gets handed to AI agents, I find that question more and more interesting. If software makes the decisions,
+               someone has to be able to check what it actually did.</p>
+        </div>
+
+        <p class="elsewhere">
+            <a href="https://github.com/kon-drees" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/kon-drees" target="_blank" rel="noopener">LinkedIn</a>
+            <button type="button" id="email-trigger" onclick="revealEmail(this)">Show email address</button>
+        </p>
     </header>
 
     <section>
-        <h2>About</h2>
-        <p class="summary">Backend engineer specializing in process mining and BPMN-driven workflow automation. Hands-on experience with Camunda, Apache Camel, and Spring in the insurance domain. Currently pursuing an M.Sc. in Computer Science at FernUniversität Hagen, writing a thesis on conformance checking: a unified fitness measure that generalizes token replay from traces and partial orders to labelled Petri nets.</p>
-    </section>
+        <h2>Work</h2>
 
-    <section>
-        <h2>Experience</h2>
-
-        <div class="entry">
-            <div class="entry__head">
-                <div class="entry__title">Software Developer <span class="entry__company">· Inverso GmbH</span></div>
-                <div class="entry__date">11.2024 – Present</div>
+        <div class="item">
+            <div class="item__head">
+                <div class="item__title">Software Engineer <span class="item__org">at inverso (Versicherungskammer Bayern group)</span></div>
+                <div class="item__date">11.2024 – today</div>
             </div>
-            <div class="entry__sub">
-                <div class="entry__sub-date">07.2025 – Present</div>
-                <div class="entry__sub-desc">Designing and implementing a dialog-driven process orchestration for insurance workflows using Spring, Apache Camel, and Camunda BPM. Technical ownership of process logic.</div>
+            <div class="phase">
+                <span class="item__date">07.2025 – today</span>
+                <p class="item__text">Moving old insurance dialogs (applications, service requests, certificates) to a new Spring Boot and
+                    Apache Camel backend. Designed the route and processor structure the team now uses as the template for every new
+                    use case, and migrated about half of the 20+ dialogs.</p>
+                <p class="item__text">Also wrote the validation for dialog definitions: fields depend on each other, so the validator
+                    treats them as a graph, rejects cycles and works out the order of checks. Plus a few small services for premium
+                    calculation and contract data, and a lot of SOAP and REST integration with existing systems.</p>
             </div>
-            <div class="entry__sub">
-                <div class="entry__sub-date">11.2024 – 06.2025</div>
-                <div class="entry__sub-desc">Full-stack development of a web-based property insurance platform (VKB) with Angular &amp; TypeScript in the frontend and Java EE in the backend.</div>
+            <div class="phase">
+                <span class="item__date">11.2024 – 06.2025</span>
+                <p class="item__text">Rebuilt the forms of a property insurance product sold through savings banks, in Angular on a
+                    Java EE backend, including accessibility under the German Accessibility Act. Stayed on it until go-live.</p>
             </div>
         </div>
 
-        <!-- TODO: Zeitraum an die tatsächlichen Daten anpassen -->
-        <div class="entry">
-            <div class="entry__head">
-                <div class="entry__title">IT Consultant <span class="entry__company">· ISR Information Products AG</span></div>
-                <div class="entry__date">05.2024 – 10.2024</div>
+        <div class="item">
+            <div class="item__head">
+                <div class="item__title">IT Consultant <span class="item__org">at ISR Information Products</span></div>
+                <div class="item__date">07.2024 – 10.2024</div>
             </div>
-            <div class="entry__desc">Modernization of an enterprise document management platform, migrating legacy content services to IBM FileNet P8. Backend development in Java with Apache Camel for system integration, alongside Angular in the frontend.</div>
+            <p class="item__text">A short stint in a client project migrating a document management platform to IBM FileNet P8.
+                Mostly consulting, with smaller changes to Apache Camel adapters.</p>
         </div>
 
-        <div class="entry">
-            <div class="entry__head">
-                <div class="entry__title">Working Student, Full-Stack <span class="entry__company">· msg systems ag</span></div>
-                <div class="entry__date">07.2023 – 12.2023</div>
+        <div class="item">
+            <div class="item__head">
+                <div class="item__title">Working Student <span class="item__org">at msg systems</span></div>
+                <div class="item__date">07.2023 – 12.2023</div>
             </div>
-            <div class="entry__desc">Development of Smart Input Management cloud solutions for insurers on Microsoft Azure. Full-stack work with Angular, NestJS, and TypeScript — building UI components and REST APIs. Agile collaboration using Azure DevOps and Git with CI/CD and code reviews.</div>
+            <p class="item__text">Worked on an Azure product that pulls structured data out of insurance letters and spreadsheets.
+                APIs, UI components and end-to-end tests with NestJS, Angular and Cypress.</p>
         </div>
 
-        <div class="entry">
-            <div class="entry__head">
-                <div class="entry__title">Apprentice Software Developer <span class="entry__company">· msg systems ag</span></div>
-                <div class="entry__date">09.2020 – 07.2023</div>
+        <div class="item">
+            <div class="item__head">
+                <div class="item__title">Apprentice Software Developer <span class="item__org">at msg systems</span></div>
+                <div class="item__date">09.2020 – 07.2023</div>
             </div>
-            <div class="entry__desc">Development of components for the nexinsure Insurance Suite for car insurers using Java, JBIT, and Spring. Modeling and automating business processes with Camunda BPM and PostgreSQL to increase straight-through processing rates. Working with Maven, Jenkins, and Git in agile projects.</div>
+            <p class="item__text">Three years in the team building motor insurance software for UNIQA in Austria. Implemented
+                Camunda 7 processes and the Java services behind them, from simple certificates to claim changes and application
+                checks. Final project: the claim change process. Finished with a grade of 1.7, alongside a part-time bachelor’s.</p>
         </div>
-    </section>
-
-    <section>
-        <h2>Education</h2>
-        <div class="edu">
-            <div class="edu__degree">M.Sc. Computer Science <span class="edu__school">· FernUniversität in Hagen</span></div>
-            <div class="edu__date">10.2024 – Present</div>
-            <div class="edu__thesis">Thesis: Token Trail Replay — a unified fitness measure for traces, partial orders, and labelled workflow nets. Process Mining research group, supervised by Dr. Robin Bergenthum.</div>
-        </div>
-        <div class="edu">
-            <div class="edu__degree">M.Sc. Computer Science <span class="edu__school">· Universität Passau</span></div>
-            <div class="edu__date">10.2023 – 09.2024 · 2 semesters, discontinued</div>
-            <div class="edu__note">Continued part-time at FernUniversität in Hagen alongside full-time work.</div>
-        </div>
-
-        <div class="edu">
-            <div class="edu__degree">B.Sc. Computer Science <span class="edu__school">· FernUniversität in Hagen</span></div>
-            <div class="edu__date">10.2020 – 09.2023</div>
-            <div class="edu__thesis">Thesis: Stochastic Local Search Algorithms for Abstract Argumentation with Heuristics based on Machine Learning.</div>
-        </div>
-        <div class="edu">
-            <div class="edu__degree">Apprenticeship Software Development <span class="edu__school">· msg systems ag</span></div>
-            <div class="edu__date">09.2020 – 07.2023</div>
-        </div>
-        <div class="edu">
-            <div class="edu__degree">B.Sc. Chemical and Bioengineering <span class="edu__school">· FAU Erlangen-Nürnberg</span></div>
-            <div class="edu__date">10.2015 – 04.2020</div>
-            <div class="edu__thesis">Thesis: Stereoscopic PIV Investigations of Free Jet Flow Fields.</div>
-        </div>
-    </section>
-
-    <section>
-        <h2>Skills</h2>
-        <div class="skill-row"><span>Process &amp; BPM</span><span>Camunda BPM, BPMN, Apache Camel, Process Mining, Conformance Checking, Petri Nets</span></div>
-        <div class="skill-row"><span>Languages</span><span>Java, TypeScript, Python, SQL</span></div>
-        <div class="skill-row"><span>Backend &amp; APIs</span><span>Spring, Java EE, GraphQL, REST, OpenAPI, NestJS</span></div>
-        <div class="skill-row"><span>Frontend</span><span>Angular, TypeScript</span></div>
-        <div class="skill-row"><span>Cloud &amp; DevOps</span><span>Azure, AWS (CCP), Docker, Jenkins, CI/CD, Git</span></div>
-        <div class="skill-row"><span>Databases</span><span>PostgreSQL</span></div>
-        <div class="skill-row"><span>Methods</span><span>Domain-Driven Design, Scrum, Code Reviews</span></div>
     </section>
 
     <section>
         <h2>Projects</h2>
 
-        <div class="project">
-            <div>
-                <div class="project__name">Token Trail Replay<span class="project__status">In progress</span></div>
-                <div class="project__desc">A unified conformance-checking measure for Petri nets, defined via token trails. Provably specializes to van der Aalst's token replay for traces and to Folz-Weinstein's variant for partial orders, while extending to labelled nets. Formulated as a constrained optimization problem; specialization results verified numerically on randomly generated instances. M.Sc. thesis.</div>
+        <div class="item">
+            <div class="item__head">
+                <div class="item__title">Token Trail Replay</div>
+                <div class="item__date">master’s thesis, in progress</div>
             </div>
-            <div class="project__tech">Python · LP/ILP · Petri nets</div>
+            <p class="item__text">Token-based replay checks how well a recorded process run fits a process model. The thesis works
+                on a single measure built from token trails that covers simple traces, partial orders and labelled Petri nets, and
+                falls back to the known replay variants in the simpler cases. Written as a constrained optimisation problem.</p>
+            <p class="item__stack">Python, LP/ILP, Petri nets</p>
         </div>
 
-        <div class="project">
-            <div>
-                <div class="project__name"><a href="https://github.com/kon-drees/sls-ml" target="_blank" rel="noopener">sls-ml</a></div>
-                <div class="project__desc">Stochastic local search algorithm for abstract argumentation frameworks with ML-based heuristics. Bachelor thesis project.</div>
+        <div class="item">
+            <div class="item__head">
+                <div class="item__title"><a href="https://github.com/kon-drees/Fake-News-Detector" target="_blank" rel="noopener">Fake News Detector</a></div>
+                <div class="item__date">university project, team of four</div>
             </div>
-            <div class="project__tech">Python</div>
+            <p class="item__text">A FastAPI service where DistilBERT classifies a news article, SHAP shows which words pushed the
+                decision, and an optional LLM agent checks individual claims with a web search. The scores on our own test set were
+                close to perfect; on current news the model was less reliable. Finding out why taught us more than the scores did.</p>
+            <p class="item__stack">Python, PyTorch, Hugging Face Transformers, SHAP, Pydantic AI, MongoDB, Docker</p>
         </div>
 
-        <div class="project">
-            <div>
-                <div class="project__name"><a href="https://github.com/kon-drees/Fake-News-Detector" target="_blank" rel="noopener">Fake-News-Detector</a></div>
-                <div class="project__desc">News article classifier using a fine-tuned BERT model and an OpenAI agent, with optional word-level relevance highlighting.</div>
+        <div class="item">
+            <div class="item__head">
+                <div class="item__title"><a href="https://github.com/kon-drees/Fachpraktikum_K01589" target="_blank" rel="noopener">Explanations for a medical chatbot</a></div>
+                <div class="item__date">university project, team of three</div>
             </div>
-            <div class="project__tech">Python</div>
+            <p class="item__text">A component that reads argumentation trees and lets a chatbot ask why it reached a conclusion,
+                over a small REST API. Responsible for the logic.</p>
+            <p class="item__stack">Java, Spring Boot, Apache Jena, RDF</p>
         </div>
 
-        <div class="project">
-            <div>
-                <div class="project__name"><a href="https://github.com/kon-drees/Fachpraktikum_K01589" target="_blank" rel="noopener">NLP Explanation Component</a></div>
-                <div class="project__desc">Explanation component for the practical course "NLP, Information Extraction and Retrieval" at FernUniversität Hagen.</div>
+        <div class="item">
+            <div class="item__head">
+                <div class="item__title"><a href="https://github.com/kon-drees/sls-ml" target="_blank" rel="noopener">sls-ml</a></div>
+                <div class="item__date">bachelor’s thesis</div>
             </div>
-            <div class="project__tech">Java</div>
+            <p class="item__text">Local search for stable extensions in abstract argumentation frameworks, with machine learning
+                models deciding where to start and which argument to flip next.</p>
+            <p class="item__stack">Python, scikit-learn, LightGBM, PyTorch Geometric</p>
         </div>
     </section>
 
     <section>
-        <h2>Languages</h2>
-        <div class="lang-row">German <span>native</span></div>
-        <div class="lang-row">English <span>C1</span></div>
-        <div class="lang-row">Swedish <span>B1</span></div>
-        <div class="lang-row">Spanish <span>A1</span></div>
-    </section>
+        <h2>Education</h2>
 
-    <section>
-        <h2>Interests</h2>
-        <p class="interests-list">Process Mining, Machine Learning, Cloud &amp; Distributed Systems, Economics, Hiking</p>
-        <p class="membership">Member of the Gesellschaft für Informatik (GI)</p>
-    </section>
-
-    <section>
-        <h2>Certifications</h2>
-        <a class="cert" href="https://www.credly.com/badges/b247562f-34b8-4811-8022-90617fb31bfc/public_url" target="_blank" rel="noopener">
-            <img loading="lazy" width="40" height="40"
-                 src="https://raw.githubusercontent.com/kon-drees/kon-drees.github.io/main/files/aws-certified-cloud-practitioner.png"
-                 alt="AWS Certified Cloud Practitioner badge">
-            <div>
-                <div class="cert__name">AWS Certified Cloud Practitioner</div>
-                <div class="cert__issuer">Amazon Web Services</div>
+        <div class="item">
+            <div class="item__head">
+                <div class="item__title">M.Sc. Computer Science <span class="item__org">at FernUniversität in Hagen</span></div>
+                <div class="item__date">10.2024 – today</div>
             </div>
-        </a>
-        <a class="cert" href="https://coursera.org/verify/HLUIQUPLRAU7" target="_blank" rel="noopener">
-            <img loading="lazy" width="40" height="40"
-                 src="https://raw.githubusercontent.com/kon-drees/kon-drees.github.io/main/files/Coursera_itde.png"
-                 alt="Coursera Introduction to Data Engineering certificate">
-            <div>
-                <div class="cert__name">Introduction to Data Engineering</div>
-                <div class="cert__issuer">DeepLearning.AI &amp; AWS · Coursera</div>
+            <p class="item__text">Part-time, focus on AI. Thesis in the process mining group of Dr. Robin Bergenthum.
+                Seminar paper on formation control of drone swarms.</p>
+        </div>
+
+        <div class="item">
+            <div class="item__head">
+                <div class="item__title">M.Sc. Computer Science <span class="item__org">at Universität Passau</span></div>
+                <div class="item__date">10.2023 – 09.2024</div>
             </div>
-        </a>
+            <p class="item__text">Two semesters with a focus on AI, then continued in Hagen next to full-time work.</p>
+        </div>
+
+        <div class="item">
+            <div class="item__head">
+                <div class="item__title">B.Sc. Computer Science <span class="item__org">at FernUniversität in Hagen</span></div>
+                <div class="item__date">10.2020 – 08.2023</div>
+            </div>
+            <p class="item__text">Part-time, next to the apprenticeship. Thesis: Stochastic Local Search Algorithms for Abstract
+                Argumentation with Heuristics based on Machine Learning, supervised by Prof. Matthias Thimm.</p>
+        </div>
+
+        <div class="item">
+            <div class="item__head">
+                <div class="item__title">B.Sc. Chemical and Biological Engineering <span class="item__org">at FAU Erlangen-Nürnberg</span></div>
+                <div class="item__date">10.2015 – 04.2020</div>
+            </div>
+            <p class="item__text">Thesis: Stereoscopic PIV Investigations of Free Jet Flow Fields.</p>
+        </div>
     </section>
 
     <section>
-        <h2>Contact</h2>
-        <div class="contact-row"><span>Email</span> <button type="button" id="email-trigger" onclick="revealEmail()">click to reveal</button></div>
-        <div class="contact-row"><span>GitHub</span> <a href="https://github.com/kon-drees" target="_blank" rel="noopener">github.com/kon-drees</a></div>
-        <div class="contact-row"><span>LinkedIn</span> <a href="https://www.linkedin.com/in/kon-drees" target="_blank" rel="noopener">linkedin.com/in/kon-drees</a></div>
+        <h2>What I work with</h2>
+        <dl class="skills">
+            <dt>Backend</dt>
+            <dd>Java, Spring Boot, Apache Camel, Java EE, REST and OpenAPI, SOAP, JPA/Hibernate</dd>
+            <dt>Frontend</dt>
+            <dd>Angular, TypeScript, accessible forms</dd>
+            <dt>Processes</dt>
+            <dd>Camunda 7, BPMN, DMN, process mining, Petri nets</dd>
+            <dt>Machine learning</dt>
+            <dd>Python, PyTorch, Hugging Face Transformers, scikit-learn, SHAP, LLM agents with Pydantic AI</dd>
+            <dt>Data</dt>
+            <dd>PostgreSQL, MongoDB</dd>
+            <dt>Everyday tools</dt>
+            <dd>Docker, OpenShift, CI/CD, Git, Splunk, Claude and Codex</dd>
+            <dt>Ways of working</dt>
+            <dd>Scrum, code reviews, domain-driven design</dd>
+        </dl>
     </section>
 
-</div>
+    <section>
+        <h2>Certificates</h2>
+        <p class="plain"><a href="https://www.credly.com/badges/b247562f-34b8-4811-8022-90617fb31bfc/public_url" target="_blank" rel="noopener">AWS Certified Cloud Practitioner</a></p>
+        <p class="plain">Domain-Driven Design, INNOQ</p>
+        <p class="plain"><a href="https://coursera.org/verify/HLUIQUPLRAU7" target="_blank" rel="noopener">Introduction to Data Engineering</a>, DeepLearning.AI and AWS</p>
+    </section>
+
+    <section>
+        <h2>Besides that</h2>
+        <p class="plain">I grade exams at FernUniversität in Hagen, for the introductory computer science course and for
+            business process modelling and process mining. Member of the Gesellschaft für Informatik.</p>
+        <p class="plain">German is my first language, English at C1, Swedish at B1, and a little Spanish.
+            Outside of work: economics, and hiking whenever there is time.</p>
+    </section>
+
+</main>
 
 </body>
 </html>
